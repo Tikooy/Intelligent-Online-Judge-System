@@ -1,0 +1,8 @@
+target/
+.idea/
+.claude/
+*.doc
+node_modules/
+vue-frontend/node_modules/
+judge-engine/node_modules/
+.git/
