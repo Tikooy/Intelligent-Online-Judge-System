@@ -1,0 +1,21 @@
+{
+  "name": "judge-engine",
+  "version": "1.0.0",
+  "description": "智能判题引擎 - 基于Docker沙箱的代码评测服务",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "dockerode": "^4.0.2",
+    "express": "^4.21.0",
+    "ioredis": "^5.4.1",
+    "mysql2": "^3.11.0",
+    "uuid": "^10.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

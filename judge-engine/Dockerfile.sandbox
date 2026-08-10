@@ -1,0 +1,21 @@
+# 判题沙箱镜像：包含 Java + C/C++ + Python3 运行环境
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    openjdk-17-jdk \
+    gcc \
+    g++ \
+    python3 \
+    && rm -rf /var/lib/apt/lists/*
+
+# 创建非 root 用户运行代码（安全）
+RUN useradd -m runner && \
+    mkdir /code && \
+    chown runner:runner /code
+
+USER runner
+WORKDIR /code
+
+CMD ["/bin/bash"]
